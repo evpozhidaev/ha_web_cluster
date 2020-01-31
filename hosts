@@ -1,0 +1,7 @@
+[keepalived]
+keepalived-host1
+keepalived-host2
+
+[nginx]
+nginx-host1
+nginx-host2

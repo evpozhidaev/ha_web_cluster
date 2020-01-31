@@ -23,25 +23,6 @@ Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
-
-  # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://vagrantcloud.com/search.
-  config.vm.define "control" do |control|
-    control.vm.box = "generic/centos8"
-	control.vm.hostname = "control.example.com"
-	control.vm.network "forwarded_port", guest: 22, host: 2220, id: "ssh"
-	control.vm.network "private_network", ip: "192.168.200.100", :device => "eth2", :adapter => 2, :netmask => "255.255.255.0"
-	
-	# Provisioning with shell
-	control.vm.provision "shell", inline: $addhosts
-    control.vm.provision "shell", inline: $adduser
-	control.vm.provision "shell", inline: $edit_sshd
-
-	control.vm.provider "virtualbox" do |vb|
-	  vb.cpus = 1
-      vb.memory = "512"
-    end
-  end
   
   # configure two machines keepalive server
   (1..2).each do |i|
