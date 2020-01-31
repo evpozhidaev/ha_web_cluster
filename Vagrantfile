@@ -33,9 +33,9 @@ Vagrant.configure("2") do |config|
 	control.vm.network "private_network", ip: "192.168.200.100", :device => "eth2", :adapter => 2, :netmask => "255.255.255.0"
 	
 	# Provisioning with shell
-	node.vm.provision "shell", inline: $addhosts
-    node.vm.provision "shell", inline: $adduser
-	node.vm.provision "shell", inline: $edit_sshd
+	control.vm.provision "shell", inline: $addhosts
+    control.vm.provision "shell", inline: $adduser
+	control.vm.provision "shell", inline: $edit_sshd
 
 	control.vm.provider "virtualbox" do |vb|
 	  vb.cpus = 1
