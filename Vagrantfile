@@ -1,6 +1,5 @@
 
 $addhosts = <<-SCRIPT
-sudo echo "192.168.200.100 control.example.com control" >> /etc/hosts
 sudo echo "192.168.200.101 keepalived-host1.example.com keepalived-host1 keepalived1" >> /etc/hosts
 sudo echo "192.168.200.102 keepalived-host2.example.com keepalived-host2 keepalived2" >> /etc/hosts
 sudo echo "192.168.200.103 nginx-host1.example.com nginx-host1 nginx1" >> /etc/hosts
