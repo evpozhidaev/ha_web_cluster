@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
 		
         # Provisioning with shell
 		node.vm.provision "shell", inline: $addhosts
-        node.vm.provision "shell", inline: $adduser
+        	node.vm.provision "shell", inline: $adduser
 		node.vm.provision "shell", inline: $edit_sshd
 
 		node.vm.provider "virtualbox" do |vb|
