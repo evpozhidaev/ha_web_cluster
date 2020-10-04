@@ -1,3 +1,5 @@
+# install locale
+ENV["LC_ALL"] = "en_US.UTF-8"
 
 $addhosts = <<-SCRIPT
 sudo echo "192.168.200.101 keepalived-host1.example.com keepalived-host1 keepalived1" >> /etc/hosts
@@ -19,6 +21,10 @@ SCRIPT
 
 Vagrant.configure("2") do |config|
   #config.ssh.insert_key = false
+  
+  # generate mac adress for NAT interface
+  config.vm.base_mac = nil
+  
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
